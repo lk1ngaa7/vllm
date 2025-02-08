@@ -255,6 +255,7 @@ class ChatCompletionRequest(OpenAIBaseModel):
     spaces_between_special_tokens: bool = True
     truncate_prompt_tokens: Optional[Annotated[int, Field(ge=1)]] = None
     prompt_logprobs: Optional[int] = None
+    bad_words: Optional[List[str]] = None 
     # doc: end-chat-completion-sampling-params
 
     # doc: begin-chat-completion-extra-params
@@ -671,6 +672,7 @@ class CompletionRequest(OpenAIBaseModel):
     truncate_prompt_tokens: Optional[Annotated[int, Field(ge=1)]] = None
     allowed_token_ids: Optional[List[int]] = None
     prompt_logprobs: Optional[int] = None
+    bad_words: Optional[List[str]] = None
     # doc: end-completion-sampling-params
 
     # doc: begin-completion-extra-params
